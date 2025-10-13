@@ -6,16 +6,15 @@
   <title>Tammy Geronimo — IT Portfolio</title>
   <meta name="description" content="Tammy Geronimo — IT student portfolio. Projects: web dev, AR, vulnerability scanning demos">
  <style>
-  /* --- Tammy's Apple-inspired portfolio theme --- */
   :root {
     --bg: #f8fafc;
     --card: #ffffff;
     --text: #1e293b;
     --muted: #64748b;
     --border: #e2e8f0;
-    --accent: #a5b4fc; /* lavender-blue hybrid */
-    --accent-light: #c7d2fe;
-    --gradient: linear-gradient(135deg, #c8a2c8, #7dd3fc);
+    --accent: #f4a7b9; /* blush pink */
+    --accent-light: #f9dce3;
+    --gradient: linear-gradient(135deg, #f4a7b9, #f9dce3);
   }
 
   * {
@@ -31,6 +30,44 @@
     line-height: 1.6;
   }
 
+  /* --- NAVBAR --- */
+  nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+  }
+
+  .nav-left {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text);
+  }
+
+  .nav-right a {
+    color: var(--text);
+    text-decoration: none;
+    margin-left: 16px;
+    font-weight: 500;
+  }
+
+  .nav-right a:hover {
+    color: var(--accent);
+  }
+
+  /* --- CONTENT --- */
   .wrap {
     max-width: 900px;
     margin: 48px auto;
@@ -159,6 +196,21 @@
     text-decoration: underline;
   }
 
+  .socials {
+    display: flex;
+    gap: 14px;
+    margin-top: 12px;
+  }
+
+  .socials a {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .socials a:hover {
+    opacity: 0.8;
+  }
+
   @media (max-width: 520px) {
     .avatar {
       width: 70px;
@@ -169,11 +221,29 @@
     .wrap {
       padding: 14px;
     }
+
+    .nav-right a {
+      margin-left: 10px;
+      font-size: 14px;
+    }
   }
 </style>
 
 </head>
 <body>
+  <nav>
+  <div class="nav-inner">
+    <div class="nav-left">Tammy Geronimo</div>
+    <div class="nav-right">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+      <a href="https://trailhead.salesforce.com/me/your-trailhead" target="_blank">Trailhead</a>
+      <a href="https://www.credly.com/users/your-credly" target="_blank">Credly</a>
+    </div>
+  </div>
+</nav>
   <main class="wrap">
     <header>
       <div class="avatar">TG</div>
