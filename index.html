@@ -41,8 +41,12 @@
       max-width: 850px;
       border-radius: 40px;
       backdrop-filter: blur(16px);
-      background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,182,193,0.25));
-      box-shadow: 0 8px 32px rgba(31,38,135,0.15);
+      background: linear-gradient(135deg, rgba(255,255,255,0.75), rgba(255,182,193,0.25));
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 
+        0 8px 32px rgba(31,38,135,0.15),
+        inset 0 1px 6px rgba(255, 255, 255, 0.35),
+        0 0 12px rgba(244,167,185,0.25);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -117,47 +121,63 @@
       padding: 24px;
     }
 
-    header {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+    /* --- ABOUT CARD --- */
+#about.card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  backdrop-filter: blur(25px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+}
 
-    .avatar {
-      width: 90px;
-      height: 90px;
-      border-radius: 24px;
-      background: var(--gradient);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 700;
-      font-size: 28px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    }
+#about.card:hover {
+  box-shadow: 0 0 35px rgba(244,167,185,0.5);
+  transform: translateY(-4px);
+}
 
-    h1 {
-      margin: 0 0 6px;
-      font-size: 28px;
-      letter-spacing: -0.02em;
-    }
+#about img {
+  width: 180px;
+  height: auto;
+  border-radius: 24px;
+}
 
-    .sub {
-      color: var(--muted);
-      margin: 0;
-    }
+.about-text {
+  flex: 1;
+}
 
-    .card {
-      background: var(--card);
-      padding: 22px;
-      border-radius: 20px;
-      margin-top: 20px;
-      border: 1px solid var(--border);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-    }
+.about-text h1 {
+  font-size: 38px;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.about-text p {
+  color: var(--muted);
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+@media (max-width: 680px) {
+  #about.card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  #about img {
+    width: 140px;
+  }
+
+  .about-text h1 {
+    font-size: 28px;
+  }
+}
+
 
     .section-title {
       display: flex;
@@ -247,9 +267,8 @@
 </head>
 <body>
 
-  <nav>
+  <nav id="navbar">
     <div class="nav-left">
-      <!-- Your logo -->
       <img src="logotg.png" alt="Tammy Geronimo Logo">
     </div>
 
@@ -264,31 +283,15 @@
   </nav>
 
   <main class="wrap">
-    <header>
-      <div class="avatar">TG</div>
-      <div>
-        <h1>Tammy Geronimo</h1>
-        <p class="sub">IT student • Web & AR developer • Security demos</p>
-      </div>
-    </header>
 
     <section class="card" id="about">
-      <div class="section-title">
-        <h2 style="margin:0;font-size:18px">About Me</h2>
-      </div>
-      <p style="margin-top:10px;color:var(--muted)">Hi — I'm Tammy, an IT student building web apps, AR demos, and learning security tools like vulnerability scanners. This portfolio shows projects I made, the skills I use, and how to contact me.</p>
-      <div style="margin-top:12px">
-        <strong>Skills</strong>
-        <div class="skills">
-          <span class="skill">HTML</span>
-          <span class="skill">CSS</span>
-          <span class="skill">JavaScript</span>
-          <span class="skill">Unity (AR)</span>
-          <span class="skill">OpenVAS</span>
-          <span class="skill">Git</span>
-        </div>
-      </div>
-    </section>
+  <img src="profiletg.png" alt="Tammy Geronimo">
+  <div class="about-text">
+    <h1>Tammy Geronimo</h1>
+    <p>Hi — I'm Tammy, an IT student passionate about web development, AR design, and security testing. I love blending technology and creativity to build modern, people-centered digital experiences.</p>
+  </div>
+</section>
+
 
     <section class="card" id="projects">
       <div class="section-title">
@@ -332,6 +335,18 @@
       contact.scrollIntoView({ behavior: 'smooth' });
       contact.classList.add('pulse');
       setTimeout(() => contact.classList.remove('pulse'), 2000);
+    });
+
+    // Dynamic navbar glow shift on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY;
+      const glowIntensity = Math.min(scrollPos / 200, 1);
+      navbar.style.boxShadow = `
+        0 8px 32px rgba(31,38,135,${0.15 + glowIntensity * 0.1}),
+        inset 0 1px 6px rgba(255,255,255,0.35),
+        0 0 ${12 + glowIntensity * 8}px rgba(244,167,185,${0.25 + glowIntensity * 0.2})
+      `;
     });
   </script>
 </body>
