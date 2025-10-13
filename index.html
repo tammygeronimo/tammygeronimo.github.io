@@ -299,6 +299,29 @@
   line-height: 1.5;
 }
 
+.more-projects {
+  grid-column: span 2;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.75), rgba(255,182,193,0.25));
+  color: #ffffff !important; /* <-- this forces white text */
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(244,167,185,0.35);
+  transition: all 0.3s ease;
+}
+
+.more-projects:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(244,167,185,0.5);
+}
+
+
 /* --- PROJECTS HEADER STYLING --- */
 
 #projects {
@@ -501,6 +524,11 @@
       <h3>PUPCON — Centralized Accreditation Portal</h3>
       <p>An ongoing capstone project aiming to centralize the accreditation process for PUP organizations. Developed with the ISO 25010 framework and user testing.</p>
     </article>
+
+    <article class="proj more-projects">
+  <h3>More Projects Soon!</h3>
+</article>
+
   </div>
 </section>
 
