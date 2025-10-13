@@ -5,28 +5,173 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Tammy Geronimo — IT Portfolio</title>
   <meta name="description" content="Tammy Geronimo — IT student portfolio. Projects: web dev, AR, vulnerability scanning demos">
-  <style>
-    /* Simple, clean styles — easy to edit */
-    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#60a5fa}
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0;background:linear-gradient(180deg,#071022 0%,#0b1220 100%);color:#e6eef8;line-height:1.5}
-    .wrap{max-width:900px;margin:36px auto;padding:20px}
-    header{display:flex;gap:16px;align-items:center}
-    .avatar{width:88px;height:88px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7dd3fc);display:flex;align-items:center;justify-content:center;color:#07203a;font-weight:700;font-size:28px}
-    h1{margin:0 0 6px;font-size:26px}
-    .sub{color:var(--muted);margin:0}
-    .card{background:rgba(255,255,255,0.03);padding:18px;border-radius:12px;margin-top:18px}
-    .section-title{display:flex;justify-content:space-between;align-items:center}
-    .skills{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .skill{background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
-    .proj{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))}
-    .proj h3{margin:0 0 6px;font-size:16px}
-    .proj p{margin:0;color:var(--muted);font-size:14px}
-    footer{margin-top:20px;color:var(--muted);font-size:14px}
-    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#07203a;text-decoration:none;font-weight:600}
-    @media (max-width:520px){.avatar{width:72px;height:72px;font-size:24px}.wrap{padding:12px}}
-  </style>
+ <style>
+  /* --- Tammy's Apple-inspired portfolio theme --- */
+  :root {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --accent: #a5b4fc; /* lavender-blue hybrid */
+    --accent-light: #c7d2fe;
+    --gradient: linear-gradient(135deg, #c8a2c8, #7dd3fc);
+  }
+
+  * {
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+  }
+
+  body {
+    font-family: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .wrap {
+    max-width: 900px;
+    margin: 48px auto;
+    padding: 24px;
+  }
+
+  header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 24px;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 28px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+
+  h1 {
+    margin: 0 0 6px;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+  }
+
+  .sub {
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .card {
+    background: var(--card);
+    padding: 22px;
+    border-radius: 20px;
+    margin-top: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  }
+
+  .section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .skills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .skill {
+    background: var(--accent-light);
+    color: #374151;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 14px;
+  }
+
+  .proj {
+    padding: 14px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: #ffffffcc;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .proj h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    color: var(--text);
+  }
+
+  .proj p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  footer {
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: var(--gradient);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 520px) {
+    .avatar {
+      width: 70px;
+      height: 70px;
+      font-size: 24px;
+    }
+
+    .wrap {
+      padding: 14px;
+    }
+  }
+</style>
+
 </head>
 <body>
   <main class="wrap">
