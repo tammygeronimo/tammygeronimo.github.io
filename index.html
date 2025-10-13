@@ -1,21 +1,3 @@
-<!--
-File: tammy_portfolio_index.html
-What this file contains:
-- A single-file, responsive portfolio (HTML + CSS + minimal JS) you can drop into a GitHub Pages repo.
-- A ready-to-use JSON snippet for is-a.dev (search for the JSON near the bottom of this file).
-
-How to use this file (quick):
-1. Create a GitHub repo named: <your-github-username>.github.io
-2. Upload THIS file as `index.html` (via GitHub web UI: Add file -> Upload files -> commit)
-3. Go to the repo Settings -> Pages -> choose Branch: `main` (or `master`) and save.
-4. Visit: https://<your-github-username>.github.io  (give DNS ~10–30 minutes to update)
-5. Fork the is-a.dev repo (https://github.com/is-a-dev/is-a.dev), add a new JSON file under `/domains/` named like `yourname.json` with the JSON snippet provided below, then submit a Pull Request.
-
-Notes:
-- Replace every occurrence of `YOUR_GITHUB_USERNAME` and `YOUR_REPO_NAME` in the JSON before sending the PR.
-- If you want multiple pages, add files (about.html, projects.html) and link them. This single file is the easiest start.
--->
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -106,38 +88,6 @@ Notes:
       <p>Made with ❤️ — Tammy Geronimo</p>
     </footer>
   </main>
-
-  <!--
-  ---------------------------
-  is-a.dev JSON snippet (ready to copy)
-  ---------------------------
-
-  Save this as a new file in the is-a.dev repo under /domains/ named `YOUR_SUBDOMAIN.json`
-  Replace YOUR_GITHUB_USERNAME and YOUR_REPO_NAME before creating the PR.
-
-  Example filename: tammy.json
-
-  {
-    "description": "Tammy Geronimo - IT portfolio",
-    "owner": {
-      "username": "YOUR_GITHUB_USERNAME"
-    },
-    "repo": "YOUR_GITHUB_USERNAME/YOUR_REPO_NAME",
-    "branch": "main",
-    "type": "github-pages"
-  }
-
-  ---------------------------
-  -->
-
-  <script>
-    // Small script: replace the placeholder email on page load if needed
-    (function(){
-      const a = document.querySelector('a[href^="mailto:"]');
-      if(a && a.href.includes('example.com')){
-        // leave as-is; change to your real email when ready
-      }
-    })();
-  </script>
+  
 </body>
 </html>
