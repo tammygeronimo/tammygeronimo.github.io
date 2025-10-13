@@ -228,11 +228,11 @@
 
 
    .section-title {
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 25px;
+  font-weight: 600;
   color: #000; /* Black text */
   letter-spacing: -0.02em;
-  margin-top: 80px; /* adds more breathing space above */
+  margin-top: 40px; /* adds more breathing space above */
   margin-bottom: 24px;
   text-align: left; /* or center, depending on your layout */
 }
@@ -297,6 +297,70 @@
   color: var(--muted);
   font-size: 15px;
   line-height: 1.5;
+}
+
+/* --- PROJECTS HEADER STYLING --- */
+#projects h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #923147;
+  text-align: center;
+  margin-bottom: 12px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#projects h2.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#projects h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 10px auto 30px;
+  border-radius: 3px;
+}
+
+/* --- CONTACT HEADER STYLING --- */
+#contact h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #923147;
+  text-align: center;
+  margin-bottom: 12px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#contact h2.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#contact h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 10px auto 24px;
+  border-radius: 3px;
+}
+
+/* --- HEADER GLOW EFFECT --- */
+#projects h2:hover,
+#contact h2:hover {
+  text-shadow: 0 0 12px rgba(244, 167, 185, 0.6);
+  transform: scale(1.03);
+  transition: all 0.3s ease;
 }
 
 /* Responsive fix for smaller screens */
@@ -483,7 +547,8 @@
     });
   }, { threshold: 0.2 });
 
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-up, #projects h2, #contact h2').forEach(el => observer.observe(el));
+
 </script>
 
 </body>
