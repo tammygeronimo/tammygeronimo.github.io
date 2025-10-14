@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Tammy Geronimo — IT Portfolio</title>
   <meta name="description" content="Tammy Geronimo — IT student portfolio. Projects: web dev, AR, vulnerability scanning demos">
- 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
  <style>
     :root {
       --bg: #f8fafc;
@@ -384,6 +385,57 @@
   border-radius: 3px;
 }
 
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-icon {
+  position: relative;
+  font-size: 2rem;
+  color: #923147;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-icon:hover {
+  color: #000;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9),
+               0 0 25px rgba(180, 180, 180, 0.4);
+  transform: translateY(-4px);
+}
+
+/* Tooltip (bubble) */
+.contact-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background: rgba(240, 240, 240, 0.95);
+  color: #000;
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* Tooltip glow and show on hover */
+.contact-icon:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px) scale(1);
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+
 /* --- HEADER GLOW EFFECT --- */
 #projects h2:hover,
 #contact h2:hover {
@@ -537,16 +589,27 @@
 
     <section class="card" id="contact">
       <h2 style="margin:0 0 8px">Contact</h2>
-      <p style="margin:0 0 8px;color:var(--muted)">Email: 
-        <a href="mailto:tamgeronimo2104@gmail.com" style="color:var(--accent);text-decoration:none">tamgeronimo2104@gmail.com</a>
-      </p>
-      <p style="margin:0;color:var(--muted)">GitHub: 
-        <a href="https://github.com/tammygeronimo" style="color:var(--accent);text-decoration:none">github.com/tammygeronimo</a>
-      </p>
+       <div class="contact-icons">
+    <a href="https://www.linkedin.com/in/tammygeronimo/" class="contact-icon" target="_blank" data-tooltip="tammygeronimo">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/tammygeronimo" class="contact-icon" target="_blank" data-tooltip="tammygeronimo">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.salesforce.com/trailblazer/qasil5cvk3jt0d2oun" class="contact-icon" target="_blank" data-tooltip="Tamara G.">
+      <i class="fas fa-mountain"></i>
+    </a>
+    <a href="#" class="contact-icon" data-tooltip="Tamara">
+      <i class="fab fa-viber"></i>
+    </a>
+    <a href="mailto:tamgeronimo2104@gmail.com" class="contact-icon" data-tooltip="Tamara Geronimo">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
     </section>
 
     <footer>
-      <p>Made with ❤️ — Tammy Geronimo</p>
+      <p>Made with ❤️ — Tamara Geronimo</p>
     </footer>
   </main>
 
